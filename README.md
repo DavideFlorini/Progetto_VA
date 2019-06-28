@@ -1,0 +1,1 @@
+to test the script run: python all_together.py --video_path Downloaded_videos/_,_______,____.mp4
