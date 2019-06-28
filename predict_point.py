@@ -48,11 +48,13 @@ def click(event, x, y, flags, param):
 
 # load the image, clone it, and setup the mouse callback function
 #image = cv2.imread(args["image"])
-cv2.namedWindow("image")
-cv2.setMouseCallback("image", click)
+cv2.namedWindow("frame")
+cv2.setMouseCallback("frame", click)
+print('enter "q" to quit')
+print('click on the image "frame" to get the predicted path for the selected point')
 while True:
     # display the image and wait for a keypress
-    cv2.imshow("image", frame)
+    cv2.imshow("frame", frame)
     key = cv2.waitKey(1) & 0xFF
 
     if refPt:
@@ -81,7 +83,7 @@ while True:
             image=image/image.max()*255
             image=image.astype('uint8')
             posteriori=posteriori.astype('uint8')
-            cv2.imshow('frame', image)
+            cv2.imshow('image', image)
             cv2.imshow('lik', posteriori)
         else:
             print('no path found')

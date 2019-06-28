@@ -1,3 +1,4 @@
+#to test the script run: python all_together.py --video_path Downloaded_videos/_,_______,____.mp4
 import os
 import argparse
 
@@ -18,6 +19,9 @@ command = 'python Pixel_probabilities.py --video_path ' + opt.video_path
 os.system(command)
 
 command = 'python predict_video.py --video_path ' + opt.video_path
+os.system(command)
+
+command = 'python predict_point.py --video_path ' + opt.video_path
 os.system(command)
 
 exit()
